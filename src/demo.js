@@ -7,6 +7,8 @@ import EditIcon from '@mui/icons-material/Edit';
 import DeleteIcon from '@mui/icons-material/DeleteOutlined';
 import SaveIcon from '@mui/icons-material/Save';
 import CancelIcon from '@mui/icons-material/Close';
+import { DataGrid } from '@mui/x-data-grid';
+import BasicSelect from './selctUi';
 import {
   GridRowModes,
   DataGridPro,
@@ -23,40 +25,22 @@ import {
 const initialRows = [
   {
     id: randomId(),
-    name: randomTraderName(),
-    age: 25,
+    name: <BasicSelect />,
     dateCreated: randomCreatedDate(),
     lastLogin: randomUpdatedDate(),
-  },
-  {
-    id: randomId(),
-    name: randomTraderName(),
-    age: 36,
-    dateCreated: randomCreatedDate(),
-    lastLogin: randomUpdatedDate(),
-  },
-  {
-    id: randomId(),
-    name: randomTraderName(),
-    age: 19,
-    dateCreated: randomCreatedDate(),
-    lastLogin: randomUpdatedDate(),
-  },
-  {
-    id: randomId(),
-    name: randomTraderName(),
-    age: 28,
-    dateCreated: randomCreatedDate(),
-    lastLogin: randomUpdatedDate(),
-  },
-  {
-    id: randomId(),
-    name: randomTraderName(),
-    age: 23,
-    dateCreated: randomCreatedDate(),
-    lastLogin: randomUpdatedDate(),
-  },
+    price: 750000 ,
+    xona: 9 ,
+  }
 ];
+
+function getStyles(name, personName, theme) {
+  return {
+    fontWeight:
+      personName.indexOf(name) === -1
+        ? theme.typography.fontWeightRegular
+        : theme.typography.fontWeightMedium,
+  };
+}
 
 function EditToolbar(props) {
   const { setRows, setRowModesModel } = props;
@@ -73,7 +57,7 @@ function EditToolbar(props) {
   return (
     <GridToolbarContainer>
       <Button color="primary" startIcon={<AddIcon />} onClick={handleClick}>
-        Add record
+        O'quvchi Qo'shish
       </Button>
     </GridToolbarContainer>
   );
@@ -131,26 +115,34 @@ export default function FullFeaturedCrudGrid() {
   };
 
   const columns = [
-    { field: 'name', headerName: 'Name', width: 180, editable: true },
-    { field: 'age', headerName: 'Age', type: 'number', editable: true },
+    { field: 'name' , headerName: 'Ism', width: 180, editable: true },
     {
       field: 'dateCreated',
-      headerName: 'Date Created',
+      headerName: 'Kurs Boshlanish sanasi',
       type: 'date',
       width: 180,
       editable: true,
     },
     {
-      field: 'lastLogin',
-      headerName: 'Last Login',
-      type: 'dateTime',
-      width: 220,
+      field: 'time',
+      headerName: 'Vaqti',
+      type: 'timePicker',
+      width: 200,
       editable: true,
     },
     {
+      field: 'lastLogin',
+      headerName: 'Tugash Sanasi',
+      type: 'dateTime',
+      width: 200,
+      editable: true,
+    },
+    { field: 'price', headerName: 'Summa', type: 'number', editable: true , width: 90 } ,
+    { field: 'xona', headerName: 'Sinf Xona', type: 'number', editable: true } ,
+    {
       field: 'actions',
       type: 'actions',
-      headerName: 'Actions',
+      headerName: 'Sozlamalar',
       width: 100,
       cellClassName: 'actions',
       getActions: ({ id }) => {
