@@ -1,15 +1,12 @@
 import * as React from 'react';
 import * as ReactDOM from 'react-dom/client';
-import { StyledEngineProvider } from '@mui/material/styles';
+import DataGridDemo from './DataGrid';
 import Demo from './demo';
-import selectUi from './selctUi'
 import './style.css'
-import BasicSelect from './selctUi';
+
 
 ReactDOM.createRoot(document.querySelector("#root")).render(
   <React.StrictMode>
-    <StyledEngineProvider injectFirst>
-      <Demo />
-    </StyledEngineProvider>
+      <DataGridDemo />
   </React.StrictMode>
 );
