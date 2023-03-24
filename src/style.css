@@ -1,0 +1,22 @@
+table {
+    font-family: arial, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+}
+
+td,
+th {
+    border: 1px solid #dddddd;
+    text-align: left;
+    padding: 8px;
+}
+
+.headerTitle {
+    border: 1px solid black;
+}
+
+.headerTitle td {
+    font-family: sans-serif;
+    font-weight: 500;
+    font-size: 18px;
+}
