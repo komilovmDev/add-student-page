@@ -1,3 +1,25 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    list-style-type: none;
+    text-decoration: none;
+}
+
+body {
+    height: 100vh;
+}
+
+.container {
+    width: 100%;
+    height: 100vh;
+    padding: 20px;
+    overflow: hidden;
+}
+
+.dataGrid {
+}
+
 table {
     font-family: arial, sans-serif;
     border-collapse: collapse;
@@ -19,4 +41,37 @@ th {
     font-family: sans-serif;
     font-weight: 500;
     font-size: 18px;
+}
+
+.plusData {
+    width: 55px;
+    height: 55px;
+    border-radius: 50%;
+    font-size: 32px;
+    border: 2px solid green;
+    position: fixed;
+    bottom: 100px;
+    right: 50px;
+    cursor: pointer;
+    color: green;
+    background-color: rgba(255, 228, 196, 0.13);
+}
+
+.addData {
+    width: 400px;
+    height: 100vh;
+    padding-top: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    border: 1px solid black;
+    position: absolute;
+    top: 0;
+    right: 0;
+    background-color: #dddddd;
+}
+
+.close {
+    right: -999px;
 }
