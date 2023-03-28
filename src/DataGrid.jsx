@@ -4,7 +4,8 @@ import './datagrid.css'
 export default function AddStudent() {
     const data = [
         { id: 1, dataTitle: "№" },
-        { id: 2, dataTitle: "Guruh Nomi" },
+        { id: 2, dataTitle: "Kurs Nomi" },
+        // { id: 8, dataTitle: "Guruh Nomi" },
         { id: 3, dataTitle: "O'qtuvchi" },
         { id: 4, dataTitle: "Kurs Boshlanish Sanasi" },
         { id: 5, dataTitle: "Kurs Tugash Sanasi" },
@@ -16,7 +17,7 @@ export default function AddStudent() {
 
     const [studentData, setStudentData] = useState([
         {
-            id: id + 1,
+            id: 1,
             teamName: "Frontend",
             teacherName: "Jalol Imamadinov",
             startTimeData: "05/03/23",
@@ -25,14 +26,14 @@ export default function AddStudent() {
             price: '750,000'
         },
         {
-            id: id + 2 ,
+            id: 2 ,
             teamName: "Beckend",
             teacherName: "Jalol Imamadinov",
             startTimeData: "05/03/23",
             closeTimeData: "03/03/24",
             zonaNumber: 4,
             price: '750,000'
-        }
+        }   
     ])
 
     const idRef = useRef()
@@ -64,13 +65,13 @@ export default function AddStudent() {
             setAlert(<span className="alert green">Muaffaqiyatli!</span>)
             setTimeout(() => {
                 setAlert()
-            }, 1000);
+            }, 3000);
             setIsOpen('addData none')
         } else {
             setAlert(<span className="alert">to'liq kiriting!</span>)
             setTimeout(() => {
                 setAlert()
-            }, 1000);
+            }, 3000);
         }
     }
 
