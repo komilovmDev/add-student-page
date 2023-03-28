@@ -5,12 +5,12 @@ export default function AddStudent() {
     const data = [
         { id: 1, dataTitle: "№" },
         { id: 2, dataTitle: "Kurs Nomi" },
-        // { id: 8, dataTitle: "Guruh Nomi" },
-        { id: 3, dataTitle: "O'qtuvchi" },
-        { id: 4, dataTitle: "Kurs Boshlanish Sanasi" },
-        { id: 5, dataTitle: "Kurs Tugash Sanasi" },
+        { id: 3, dataTitle: "Guruh Nomi" } ,
+        { id: 4, dataTitle: "O'qtuvchi" },
+        { id: 5, dataTitle: "Kurs Boshlanish Sanasi" },
+        { id: 6, dataTitle: "Kurs Tugash Sanasi" },
         { id: 7, dataTitle: "Xona Raqami" },
-        { id: 6, dataTitle: "Narxi" }
+        { id: 8, dataTitle: "Narxi" } ,
     ]   
 
     const [id, setId] = useState(0);
@@ -38,6 +38,7 @@ export default function AddStudent() {
 
     const idRef = useRef()
     const teamNameRef = useRef()
+    const groupName = useRef()
     const teacherNameRef = useRef()
     const startTimeDataRef = useRef()
     const closeTimeDataRef = useRef()
@@ -45,7 +46,7 @@ export default function AddStudent() {
     const priceRef = useRef()
 
     function addData() {
-        if (teamNameRef.current.value != '' && teacherNameRef.current.value != '' && startTimeDataRef.current.value != '' && closeTimeDataRef.current.value != '' && zonaNumberRef.current.value != '' && priceRef.current.value != '') {
+        if (teamNameRef.current.value != '' && teacherNameRef.current.value != '' && startTimeDataRef.current.value != '' && closeTimeDataRef.current.value != '' && zonaNumberRef.current.value != '' && priceRef.current.value != '' ) {
             const currentHighestId = studentData.reduce((acc, curr) => curr.id > acc ? curr.id : acc, 0);
             const newId = currentHighestId + 1;    
             setStudentData(prevData => [
