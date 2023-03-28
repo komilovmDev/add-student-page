@@ -54,16 +54,14 @@ export default function WorkInfo() {
               <td contentEditable={editableRows[item.id]}>{item.price}</td>
               <td contentEditable={editableRows[item.id]}>{item.kurs}</td>
               <td contentEditable={editableRows[item.id]}>{item.foiz}</td>
-              <td>
                 <button onClick={() => handleEditClick(item.id)}>
-                  {editableRows[item.id] ? 'Saqlash' : 'Etid'}
+                  {editableRows[item.id] ? 'Saqlash' : "O'zgartirish"}
                 </button>
-              </td>
             </tr>
           ))}
         </tbody>
       </table>
-      <button className="plusTr" onClick={handleAddRowClick}>
+      <button contentEditable={editableRows} className="plusTr" onClick={handleAddRowClick}>
         +
       </button>
     </>
