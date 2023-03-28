@@ -90,7 +90,7 @@ export default function AddStudent() {
             }, 3000);
             setIsOpen('addData none')
         } else {
-            setAlert(<span className="alert">to'liq kiriting!</span>)
+            setAlert(<span className="alert">To'liq Kiriting!</span>)
             setTimeout(() => {
                 setAlert()
             }, 3000);
