@@ -37,7 +37,7 @@ export default function WorkInfo() {
   };
 
   return (
-    <>
+    <div className='container workInfo'>
       <table>
         <thead>
           <tr>
@@ -64,6 +64,6 @@ export default function WorkInfo() {
       <button contentEditable={editableRows} className="plusTr" onClick={handleAddRowClick}>
         +
       </button>
-    </>
+    </div>
   );
 }
